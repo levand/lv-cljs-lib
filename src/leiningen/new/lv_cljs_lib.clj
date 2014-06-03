@@ -12,15 +12,7 @@
     (->files data
              ;; Project setup
              ["project.clj" (render "project.clj")]
-             ["profiles.clj" (render "profiles.clj")]
-
-             ;; Resources
-             [(format "resources/public/dev/%s.html" (:name data))
-              (render "resources/public/dev/app.html")]
-             [(format "resources/public/%s.html" (:name data))
-              (render "resources/public/app.html")]
-             [(format "resources/public/%s.css" (:name data))
-              (render "resources/public/app.css")]
+             [".gitignore" (render "gitignore-template")]
 
              ;; Code
              [(format "src/cljx/%s/sample.cljx" (:sanitized data))
@@ -29,5 +21,12 @@
               (render "src/cljs/app.cljs")]
              [(format "src/clj/%s.clj" (:sanitized data))
               (render "src/clj/app.clj")]
+
+             ;; Tests
+             [(format "test/clj/%s_test.clj" (:sanitized data))
+              (render "test/clj/app_test.clj")]
+             [(format "test/cljs/%s_test.cljs" (:sanitized data))
+              (render "test/cljs/app_test.cljs")]
+
 
              )))

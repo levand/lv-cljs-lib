@@ -1,7 +1,7 @@
 (ns {{name}}
   (:require [{{name}}.sample :as sample]))
 
-(defn ^:export main
-  "Entry point for ClojureScript application"
-  []
-  (.log js/console (sample/hello "World")))
+(defn ^:export lib
+  "Entry point for ClojureScript lib"
+  [name]
+  (.log js/console (sample/hello name)))

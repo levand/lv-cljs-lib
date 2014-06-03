@@ -2,7 +2,7 @@
   (:gen-class)
   (:require [{{name}}.sample :as sample]))
 
-(defn -main
-  "Entry point for Clojure application"
+(defn lib
+  "Entry point for Clojure library"
   [& args]
   (println (sample/hello "World")))
