@@ -1,14 +1,14 @@
-(ns leiningen.new.lv-cljs-proj
+(ns leiningen.new.lv-cljs-lib
   (:require [leiningen.new.templates :as lnt
              :refer [renderer name-to-path ->files]]
             [leiningen.core.main :as main]))
 
-(defn lv-cljs-proj
+(defn lv-cljs-lib
   [name]
   (let [data {:name name
               :sanitized (name-to-path name)}
-        render (fn [file] ((lnt/renderer "lv-cljs-proj") file data))]
-    (main/info "Generating fresh 'lein new' lv-cljs-proj project.")
+        render (fn [file] ((lnt/renderer "lv-cljs-lib") file data))]
+    (main/info "Generating fresh 'lein new' lv-cljs-lib project.")
     (->files data
              ;; Project setup
              ["project.clj" (render "project.clj")]

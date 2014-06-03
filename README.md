@@ -1,4 +1,4 @@
-# lv-cljs-proj
+# lv-cljs-lib
 
 A Leiningen template for a project with ClojureScript and cljx, set up
 for distribution as a library.
