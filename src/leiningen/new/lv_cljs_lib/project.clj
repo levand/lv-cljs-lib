@@ -25,13 +25,13 @@
          :dependencies [[org.clojure/clojure "1.6.0"]
                         [org.clojure/clojurescript "0.0-2227"]]
          :hooks        [leiningen.cljsbuild]
-         :cljsbuild    {:builds        {:whitspace      {:source-paths  ["test/cljs"]
-                                                         :compiler      {:output-to     "target/cljsbuild/whitespace/{{name}}.js"
-                                                                         :pretty-print  true}}
-                                        :advanced {:source-paths  ["test/cljs"]
-                                                   :compiler      {:output-to     "target/cljsbuild/advanced/{{name}}.js"
-                                                                   :pretty-print  false
-                                                                   :optimizations :advanced}}}
+         :cljsbuild    {:builds        {:whitspace {:source-paths  ["test/cljs"]
+                                                    :compiler      {:output-to "target/cljsbuild/whitespace/{{name}}.js"
+                                                                    :pretty-print true}}
+                                        :advanced {:source-paths ["test/cljs"]
+                                                   :compiler     {:output-to     "target/cljsbuild/advanced/{{name}}.js"
+                                                                  :pretty-print  false
+                                                                  :optimizations :advanced}}}
                         :test-commands {"test-whitespace" ["phantomjs" :runner
                                                            "target/cljsbuild/whitespace/{{name}}.js"]
                                         "test-advanced" ["phantomjs" :runner
