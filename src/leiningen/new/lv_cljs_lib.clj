@@ -25,8 +25,11 @@
              ;; Tests
              [(format "test/clj/%s_test.clj" (:sanitized data))
               (render "test/clj/app_test.clj")]
+             [(format "test/clj/%s/test_helper.clj" (:sanitized data))
+              (render "test/clj/app/test_helper.clj")]
              [(format "test/cljs/%s_test.cljs" (:sanitized data))
               (render "test/cljs/app_test.cljs")]
-
+             [(format "test/cljs/%s/test_helper.cljs" (:sanitized data))
+              (render "test/cljs/app/test_helper.cljs")]
 
              )))

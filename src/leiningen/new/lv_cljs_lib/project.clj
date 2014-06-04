@@ -26,6 +26,7 @@
                         [org.clojure/clojurescript "0.0-2227"]
                         [com.cemerick/double-check "0.5.7"]]
          :hooks        [leiningen.cljsbuild]
+         :jvm-opts     ["-Dclojure.test.check.scale=10.5"]
          :cljsbuild    {:builds {:whitspace {:source-paths  ["test/cljs"]
                                              :compiler      {:output-to "target/cljsbuild/whitespace/{{name}}.js"
                                                              :pretty-print true}}
@@ -34,7 +35,9 @@
                                                            :pretty-print  false
                                                            :optimizations :advanced}}}
                         :test-commands {"test-whitespace" ["phantomjs" :runner
+                                                           "this['clojure.test.check.scale']=10.5"
                                                            "target/cljsbuild/whitespace/{{name}}.js"]
                                         "test-advanced" ["phantomjs" :runner
+                                                         "this['clojure.test.check.scale']=100"
                                                          "target/cljsbuild/advanced/{{name}}.js"]}}}}
   )

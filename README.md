@@ -1,7 +1,13 @@
 # lv-cljs-lib
 
-A Leiningen template for a project with ClojureScript and cljx, set up
-for distribution as a library.
+A Leiningen template for a project with ClojureScript, cljx, clojure.test,
+clojurescript.test and double-check.
+
+## Usage
+
+1. Run `lein new lv-cljs-lib my-project-name`
+2. Run `lein test` in the new project to see the stub test code run.
+3. Edit the project to suit your own ends.
 
 ## License
 
