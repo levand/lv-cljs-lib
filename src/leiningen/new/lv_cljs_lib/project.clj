@@ -8,16 +8,24 @@
   :resource-paths []
   :source-paths ["src/clj"
                  "src/cljs"
-                 "gen/clj"
-                 "gen/cljs"]
+                 "target/cljx/clj"
+                 "target/cljx/cljs"]
   :test-paths ["test/clj"
-               "test/cljs"]
+               "test/cljs"
+               "target/cljx-test/clj"
+               "target/cljx-test/cljs"]
   :main {{name}}
   :cljx {:builds [{:source-paths ["src/cljx"]
-                   :output-path "gen/clj"
+                   :output-path "target/cljx/clj"
                    :rules :clj}
                   {:source-paths ["src/cljx"]
-                   :output-path "gen/cljs"
+                   :output-path "target/cljx/cljs"
+                   :rules :cljs}
+                  {:source-paths ["test/cljx"]
+                   :output-path "target/cljx-test/clj"
+                   :rules :clj}
+                  {:source-paths ["test/cljx"]
+                   :output-path "target/cljx-test/cljs"
                    :rules :cljs}]}
   :profiles
   {:dev {:plugins      [[lein-cljsbuild "1.0.3"]
@@ -27,10 +35,10 @@
                         [com.cemerick/double-check "0.5.7"]]
          :hooks        [leiningen.cljsbuild]
          :jvm-opts     ["-Dclojure.test.check.scale=10.5"]
-         :cljsbuild    {:builds {:whitspace {:source-paths  ["test/cljs"]
+         :cljsbuild    {:builds {:whitspace {:source-paths  ["test/cljs" "target/cljx-test/cljs"]
                                              :compiler      {:output-to "target/cljsbuild/whitespace/{{name}}.js"
                                                              :pretty-print true}}
-                                 :advanced {:source-paths ["test/cljs"]
+                                 :advanced {:source-paths ["test/cljs" "target/cljx-test/cljs"]
                                             :compiler     {:output-to     "target/cljsbuild/advanced/{{name}}.js"
                                                            :pretty-print  false
                                                            :optimizations :advanced}}}
