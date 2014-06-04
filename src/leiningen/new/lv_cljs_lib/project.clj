@@ -35,9 +35,10 @@
                         [com.cemerick/double-check "0.5.7"]]
          :hooks        [leiningen.cljsbuild]
          :jvm-opts     ["-Dclojure.test.check.scale=10.5"]
-         :cljsbuild    {:builds {:whitspace {:source-paths  ["test/cljs" "target/cljx-test/cljs"]
-                                             :compiler      {:output-to "target/cljsbuild/whitespace/{{name}}.js"
-                                                             :pretty-print true}}
+         :cljsbuild    {:builds {:whitespace {:source-paths  ["test/cljs" "target/cljx-test/cljs"]
+                                              :compiler      {:output-to "target/cljsbuild/whitespace/{{name}}.js"
+                                                              :optimizations :whitespace
+                                                              :pretty-print true}}
                                  :advanced {:source-paths ["test/cljs" "target/cljx-test/cljs"]
                                             :compiler     {:output-to     "target/cljsbuild/advanced/{{name}}.js"
                                                            :pretty-print  false

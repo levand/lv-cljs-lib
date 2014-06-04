@@ -1,6 +1,6 @@
 # lv-cljs-lib
 
-A Leiningen template for a project with ClojureScript, cljx, clojure.test,
+A Leiningen template for a library with ClojureScript, cljx, clojure.test,
 clojurescript.test and double-check.
 
 ## Usage
