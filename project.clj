@@ -1,4 +1,4 @@
-(defproject lv-cljs-lib/lein-template "0.1.0-SNAPSHOT"
+(defproject lv-cljs-lib/lein-template "0.1.0"
   :description "Cljx library template"
   :url "http://github.com/levand/lv-cljs-lib"
   :license {:name "Eclipse Public License"
